@@ -1,0 +1,32 @@
+{
+  "name": "animation-render",
+  "version": "0.0.0",
+  "main": "./index.tsx",
+  "types": "./index.tsx",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint *.ts*"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "*",
+    "react": "^18.2.0",
+    "tsconfig": "*",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@pixi/app": "^6.5.4",
+    "@pixi/constants": "^6.5.4",
+    "@pixi/core": "^6.5.4",
+    "@pixi/extensions": "^6.5.4",
+    "@pixi/loaders": "^6.5.4",
+    "@pixi/math": "^6.5.4",
+    "@pixi/runner": "^6.5.4",
+    "@pixi/settings": "^6.5.4",
+    "@pixi/text": "^6.5.4",
+    "@pixi/ticker": "^6.5.4",
+    "@pixi/utils": "^6.5.4"
+  }
+}

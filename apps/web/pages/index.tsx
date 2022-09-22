@@ -1,10 +1,10 @@
-import { Button } from "ui";
+import { AnimationEditor } from 'animation-editor'
 
 export default function Web() {
   return (
     <div>
       <h1>Web</h1>
-      <Button />
+      <AnimationEditor />
     </div>
   );
 }
