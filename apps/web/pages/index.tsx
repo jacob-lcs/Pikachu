@@ -1,10 +1,13 @@
+import type { NextPage } from 'next'
 import { AnimationEditor } from 'animation-editor'
+import styles from '../styles/Home.module.css'
 
-export default function Web() {
+const Home: NextPage = () => {
   return (
-    <div>
-      <h1>Web</h1>
+    <div className={styles.container}>
       <AnimationEditor />
     </div>
-  );
+  )
 }
+
+export default Home

@@ -6,14 +6,14 @@ export * from '@pixi/runner';
 export * from '@pixi/settings';
 export * from '@pixi/ticker';
 export * from '@pixi/app';
-export * from '@pixi/loaders';
 export * from '@pixi/text';
+export * from '@pixi/assets';
+export * from '@pixi/sprite-animated';
 export { utils };
 export * from '@pixi/core';
 
 // Renderer plugins
 import { extensions, BatchRenderer } from '@pixi/core';
 import { TickerPlugin } from '@pixi/ticker';
-import { AppLoaderPlugin } from '@pixi/loaders';
 
-extensions.add(BatchRenderer, TickerPlugin, AppLoaderPlugin)
+extensions.add(BatchRenderer, TickerPlugin)

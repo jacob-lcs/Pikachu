@@ -1,5 +1,9 @@
-const withTM = require("next-transpile-modules")(["animation-render", "animation-editor"]);
+const withTM = require('next-transpile-modules')(['animation-editor', 'animation-render']);
 
-module.exports = withTM({
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
-});
+  swcMinify: true,
+}
+
+module.exports = withTM(nextConfig)

@@ -22,8 +22,9 @@
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.6",
+    "animation-render": "*",
     "install": "^0.13.0",
     "npm": "^8.19.2",
-    "animation-render": "*"
+    "zustand": "^4.1.1"
   }
 }
