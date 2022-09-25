@@ -1,7 +1,10 @@
 module.exports = {
-  extends: ["next", "turbo", "prettier", "@emotion"],
+  extends: ["turbo", "prettier", "plugin:@typescript-eslint/recommended"],
+  plugins: ["@emotion", "@typescript-eslint"],
+  parser: "@typescript-eslint/parser",
   rules: {
-    "@next/next/no-html-link-for-pages": "off",
     "react/jsx-key": "off",
+    "semi": [2, "never"]
   },
-};
+  ignorePatterns: ["**/dist/**"]
+}

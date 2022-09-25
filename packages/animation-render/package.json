@@ -1,33 +1,36 @@
 {
   "name": "animation-render",
   "version": "0.0.0",
-  "main": "./index.tsx",
-  "types": "./index.tsx",
+  "type": "module",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint *.ts*"
+    "lint": "eslint *.ts*",
+    "build": "vite build",
+    "dev": "vite build --watch"
+  },
+  "main": "./dist/animation-render.umd.cjs",
+  "module": "./dist/animation-render.js",
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/animation-render.js",
+      "require": "./dist/animation-render.umd.cjs"
+    }
   },
   "devDependencies": {
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "eslint": "^7.32.0",
-    "eslint-config-custom": "*",
-    "react": "^18.2.0",
-    "tsconfig": "*",
-    "typescript": "^4.5.2"
+    "eslint-config-custom": "workspace:*",
+    "react": "^17.0.2",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.5.2",
+    "vite": "^3.1.3"
   },
   "dependencies": {
-    "@pixi/app": "^6.5.4",
-    "@pixi/assets": "^6.5.4",
-    "@pixi/constants": "^6.5.4",
-    "@pixi/core": "^6.5.4",
-    "@pixi/extensions": "^6.5.4",
-    "@pixi/math": "^6.5.4",
-    "@pixi/runner": "^6.5.4",
-    "@pixi/settings": "^6.5.4",
-    "@pixi/sprite-animated": "^6.5.4",
-    "@pixi/text": "^6.5.4",
-    "@pixi/ticker": "^6.5.4",
-    "@pixi/utils": "^6.5.4"
+    "pixi.js": "6.5.4"
   }
 }

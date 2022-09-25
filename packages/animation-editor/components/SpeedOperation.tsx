@@ -1,8 +1,6 @@
 import * as React from 'react'
 import { SpeedDial, SpeedDialAction } from '@mui/material'
-import AddIcon from '@mui/icons-material/Add';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import LightModeIcon from '@mui/icons-material/LightMode';
+import { DarkMode as DarkModeIcon, LightMode as LightModeIcon, Add as AddIcon } from '@mui/icons-material'
 import { useEditorState } from '../store/editorStore'
 
 export const SpeedOperation: React.FC = () => {

@@ -1,9 +1,6 @@
 import * as React from 'react'
 import { AppBar, Tooltip, Container, Toolbar, Typography, Box, IconButton } from '@mui/material'
-import TextFormatIcon from '@mui/icons-material/TextFormat';
-import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
-import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
-import AutoAwesomeMotionIcon from '@mui/icons-material/AutoAwesomeMotion';
+import { AddPhotoAlternate as AddPhotoAlternateIcon, AutoAwesomeMotion as AutoAwesomeMotionIcon, AutoFixHigh as AutoFixHighIcon, TextFormat as TextFormatIcon } from '@mui/icons-material'
 
 export const Header: React.FC = () => {
   return (
