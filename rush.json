@@ -27,9 +27,10 @@
    * for details about these alternatives.
    */
   "pnpmVersion": "7.14.2",
+  "pnpmOptions": {
+    "useWorkspaces": true
+  },
 
-  // "npmVersion": "6.14.15",
-  // "yarnVersion": "1.9.4",
 
   /**
    * Older releases of the Node.js engine may be missing features required by your system.
@@ -94,7 +95,7 @@
    * and set projectFolderMaxDepth to a large number.
    */
   // "projectFolderMinDepth": 2,
-  // "projectFolderMaxDepth": 2,
+  "projectFolderMaxDepth": 3,
 
   /**
    * Today the npmjs.com registry enforces fairly strict naming rules for packages, but in the early
@@ -324,6 +325,22 @@
    * 3. It's useful to have a centralized inventory of all projects and their important metadata.
    */
   "projects": [
+    {
+      "packageName": "pixi-render",
+      "projectFolder": "packages/libs/pixi-render"
+    },
+    {
+      "packageName": "pixi-editor",
+      "projectFolder": "packages/libs/pixi-editor"
+    },
+    {
+      "packageName": "tsconfig",
+      "projectFolder": "packages/libs/tsconfig"
+    },
+    {
+      "packageName": "awesome-animation-editor",
+      "projectFolder": "packages/apps/awesome-animation-editor"
+    }
     // {
     //   /**
     //    * The NPM package name of the project (must match package.json)

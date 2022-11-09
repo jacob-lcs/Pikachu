@@ -1,0 +1,25 @@
+{
+  "name": "awesome-animation-editor",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "normalize.css": "^8.0.1",
+    "pixi-editor": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "@vitejs/plugin-react": "^2.2.0",
+    "typescript": "^4.8.4",
+    "vite": "^3.2.3",
+    "tsconfig": "workspace:*"
+  }
+}

@@ -71,3 +71,6 @@ common/autoinstallers/*/.npmrc
 
 # Heft temporary files
 .heft
+
+# vite build output
+dist
