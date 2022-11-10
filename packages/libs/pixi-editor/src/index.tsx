@@ -1,8 +1,8 @@
-import React from 'react'
+import { css } from '@emotion/react'
 
 export const Editor = () => {
   return (
-    <div>
+    <div css={css``}>
       editor
     </div>
   )

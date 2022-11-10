@@ -6,20 +6,32 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:analyze": "ANALYZE=1 vite build",
     "preview": "vite preview"
   },
+  "sideEffects": false,
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "normalize.css": "^8.0.1",
-    "pixi-editor": "workspace:*"
+    "pixi-editor": "workspace:*",
+    "@mui/material": "~5.10.13",
+    "@emotion/styled": "~11.10.5",
+    "@emotion/react": "~11.10.5",
+    "@mui/icons-material": "~5.10.9",
+    "zustand": "~4.1.4",
+    "react-use": "~17.4.0",
+    "lodash-es": "~4.17.21"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
+    "@babel/core": "^7.20.2",
     "@vitejs/plugin-react": "^2.2.0",
     "typescript": "^4.8.4",
     "vite": "^3.2.3",
-    "tsconfig": "workspace:*"
+    "tsconfig": "workspace:*",
+    "@emotion/babel-plugin": "~11.10.5",
+    "rollup-plugin-visualizer": "~5.8.3"
   }
 }

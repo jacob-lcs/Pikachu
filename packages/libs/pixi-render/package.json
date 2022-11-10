@@ -12,6 +12,7 @@
       "require": "./dist/pixi-render.cjs"
     }
   },
+  "sideEffects": false,
   "scripts": {
     "build": "vite build"
   },
