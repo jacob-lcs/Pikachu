@@ -1,7 +1,6 @@
 {
   "name": "pixi-render",
   "version": "0.0.1",
-  "type": "module",
   "files": ["dist"],
   "main": "./dist/pixi-render.cjs",
   "module": "./dist/pixi-render.mjs",

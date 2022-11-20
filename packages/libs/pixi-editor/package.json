@@ -1,15 +1,14 @@
 {
   "name": "pixi-editor",
   "version": "0.0.1",
-  "type": "module",
   "files": ["dist"],
-  "main": "./dist/pixi-editor.umd.cjs",
-  "module": "./dist/pixi-editor.js",
+  "main": "./dist/pixi-editor.js",
+  "module": "./dist/pixi-editor.mjs",
   "typings": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/pixi-editor.js",
-      "require": "./dist/pixi-editor.umd.cjs"
+      "import": "./dist/pixi-editor.mjs",
+      "require": "./dist/pixi-editor.js"
     }
   },
   "sideEffects": false,
@@ -20,13 +19,10 @@
   },
   "dependencies": {
     "react": "^18.0.0",
-    "@mui/material": "~5.10.13",
-    "@emotion/styled": "~11.10.5",
-    "@emotion/react": "~11.10.5",
-    "@mui/icons-material": "~5.10.9",
     "zustand": "~4.1.4",
-    "react-use": "~17.4.0",
-    "lodash-es": "~4.17.21"
+    "ahooks": "3.7.2",
+    "lodash-es": "~4.17.21",
+    "antd": "5.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",
@@ -37,7 +33,11 @@
     "@types/node": "^18.11.9",
     "vite-plugin-dts": "^1.7.0",
     "tsconfig": "workspace:*",
-    "@emotion/babel-plugin": "~11.10.5",
-    "rollup-plugin-visualizer": "~5.8.3"
+    "eslint": "^8.28.0",
+    "eslint-config-custom": "workspace:*",
+    "rollup-plugin-visualizer": "~5.8.3",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
+    "eslint-plugin-react": "^7.31.11"
   }
 }

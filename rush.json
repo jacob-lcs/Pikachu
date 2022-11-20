@@ -340,6 +340,10 @@
     {
       "packageName": "awesome-animation-editor",
       "projectFolder": "packages/apps/awesome-animation-editor"
+    },
+    {
+      "packageName": "eslint-config-custom",
+      "projectFolder": "packages/libs/eslint-config-custom"
     }
     // {
     //   /**

@@ -15,12 +15,8 @@
     "react-dom": "^18.0.0",
     "normalize.css": "^8.0.1",
     "pixi-editor": "workspace:*",
-    "@mui/material": "~5.10.13",
-    "@emotion/styled": "~11.10.5",
-    "@emotion/react": "~11.10.5",
-    "@mui/icons-material": "~5.10.9",
     "zustand": "~4.1.4",
-    "react-use": "~17.4.0",
+    "ahooks": "3.7.2",
     "lodash-es": "~4.17.21"
   },
   "devDependencies": {
@@ -31,7 +27,6 @@
     "typescript": "^4.8.4",
     "vite": "^3.2.3",
     "tsconfig": "workspace:*",
-    "@emotion/babel-plugin": "~11.10.5",
     "rollup-plugin-visualizer": "~5.8.3"
   }
 }

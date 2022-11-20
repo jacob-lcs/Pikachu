@@ -8,9 +8,5 @@ const isNeedVisualizer = process.env.ANALYZE === '1'
 export default defineConfig({
   plugins: [react({
     jsxRuntime: 'classic',
-    jsxImportSource: "@emotion/react",
-    babel: {
-      plugins: ["@emotion/babel-plugin", isNeedVisualizer && visualizer()].filter(Boolean),
-    },
-  })]
+  }), isNeedVisualizer && visualizer()].filter(Boolean)
 })
