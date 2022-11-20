@@ -2,7 +2,6 @@
   "name": "awesome-animation-editor",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -27,6 +26,9 @@
     "typescript": "^4.8.4",
     "vite": "^3.2.3",
     "tsconfig": "workspace:*",
+    "tailwindcss": "^3.2.4",
+    "postcss": "^8.4.19",
+    "autoprefixer": "^10.4.13",
     "rollup-plugin-visualizer": "~5.8.3"
   }
 }

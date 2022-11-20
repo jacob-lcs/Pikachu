@@ -1,9 +1,9 @@
-import React from 'react'
 import { Button } from 'antd'
+import "./index.css"
 
 export const Editor = () => {
   return (
-    <div>
+    <div className='m-3'>
       editor
       <Button>111</Button>
     </div>

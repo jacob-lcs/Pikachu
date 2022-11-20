@@ -1,4 +1,5 @@
 import { Editor } from 'pixi-editor'
+import "pixi-editor/dist/style.css"
 
 function App() {
   return (

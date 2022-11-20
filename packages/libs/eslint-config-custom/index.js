@@ -21,7 +21,8 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
-        "semi": [2, "never"]
+        "semi": [2, "never"],
+        "react/react-in-jsx-scope": "off"
     },
     "ignorePatterns": [
         "**/dist/**"
