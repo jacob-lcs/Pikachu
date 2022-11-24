@@ -26,7 +26,7 @@
    * Specify one of: "pnpmVersion", "npmVersion", or "yarnVersion".  See the Rush documentation
    * for details about these alternatives.
    */
-  "pnpmVersion": "7.14.2",
+  "pnpmVersion": "7.17.0",
   "pnpmOptions": {
     "useWorkspaces": true
   },

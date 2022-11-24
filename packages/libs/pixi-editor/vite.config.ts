@@ -1,7 +1,6 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import dts from 'vite-plugin-dts'
 import { visualizer } from "rollup-plugin-visualizer"
 
 const isNeedVisualizer = process.env.ANALYZE === '1'
@@ -9,7 +8,7 @@ const isNeedVisualizer = process.env.ANALYZE === '1'
 export default defineConfig({
   plugins: [react({
     jsxRuntime: 'classic',
-  }), dts(), isNeedVisualizer && visualizer()].filter(Boolean),
+  }), isNeedVisualizer && visualizer()].filter(Boolean),
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points

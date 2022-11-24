@@ -74,3 +74,4 @@ common/autoinstallers/*/.npmrc
 
 # vite build output
 dist
+typings

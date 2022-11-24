@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "build:analyze": "ANALYZE=1 vite build",
     "preview": "vite preview"
   },
@@ -14,6 +14,7 @@
     "react-dom": "^18.0.0",
     "normalize.css": "^8.0.1",
     "pixi-editor": "workspace:*",
+    "pixi-render": "workspace:*",
     "zustand": "~4.1.4",
     "ahooks": "3.7.2",
     "lodash-es": "~4.17.21"
@@ -23,7 +24,7 @@
     "@types/react-dom": "^18.0.8",
     "@babel/core": "^7.20.2",
     "@vitejs/plugin-react": "^2.2.0",
-    "typescript": "^4.8.4",
+    "typescript": "^4.9.3",
     "vite": "^3.2.3",
     "tsconfig": "workspace:*",
     "tailwindcss": "^3.2.4",
