@@ -3,6 +3,7 @@
     "antd",
     "Pikachu",
     "tailwindcss",
+    "vuepress",
     "zustand"
   ]
 }
