@@ -75,3 +75,7 @@ common/autoinstallers/*/.npmrc
 # vite build output
 dist
 typings
+
+# vuepress build output
+.temp
+.cache

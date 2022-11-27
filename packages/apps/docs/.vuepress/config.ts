@@ -1,6 +1,5 @@
-import { defineConfig } from "vuepress/config";
+import { defineUserConfig } from "vuepress";
 
-export default defineConfig({
-  title: 'Pikachu',
-  evergreen: true
+export default defineUserConfig({
+  title: 'Pikachu'
 });
