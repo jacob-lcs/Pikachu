@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Pikachu } from 'pixi-render'
+import { Pikachu } from '@pikachu/render'
 
 function App() {
   const [pikachuInstance, setPikachuInstance] = useState<Pikachu>()

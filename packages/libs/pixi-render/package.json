@@ -1,5 +1,5 @@
 {
-  "name": "pixi-render",
+  "name": "@pikachu/render",
   "version": "0.0.1",
   "files": ["dist"],
   "main": "./dist/pixi-render.js",
@@ -20,7 +20,7 @@
     "pixi.js": "^7.0.0"
   },
   "devDependencies": {
-    "vite": "^3.2.3",
+    "vite": "^4.0.0",
     "typescript": "^4.9.3",
     "@types/node": "^18.11.9",
     "tsconfig": "workspace:*"

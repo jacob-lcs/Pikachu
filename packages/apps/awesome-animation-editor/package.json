@@ -13,23 +13,23 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "normalize.css": "^8.0.1",
-    "pixi-editor": "workspace:*",
-    "pixi-render": "workspace:*",
-    "zustand": "~4.1.4",
+    "@pikachu/editor": "workspace:*",
+    "@pikachu/render": "workspace:*",
+    "zustand": "^4.1.4",
     "ahooks": "3.7.2",
-    "lodash-es": "~4.17.21"
+    "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@babel/core": "^7.20.2",
-    "@vitejs/plugin-react": "^2.2.0",
+    "@vitejs/plugin-react": "^3.0.0",
     "typescript": "^4.9.3",
-    "vite": "^3.2.3",
+    "vite": "^4.0.0",
     "tsconfig": "workspace:*",
     "tailwindcss": "^3.2.4",
     "postcss": "^8.4.19",
     "autoprefixer": "^10.4.13",
-    "rollup-plugin-visualizer": "~5.8.3"
+    "rollup-plugin-visualizer": "^5.8.3"
   }
 }

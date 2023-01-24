@@ -1,5 +1,5 @@
 {
-  "name": "pixi-editor",
+  "name": "@pikachu/editor",
   "version": "0.0.1",
   "files": ["dist"],
   "main": "./dist/pixi-editor.js",
@@ -20,15 +20,15 @@
   },
   "dependencies": {
     "react": "^18.0.0",
-    "zustand": "~4.1.4",
+    "zustand": "^4.1.4",
     "ahooks": "3.7.2",
-    "lodash-es": "~4.17.21",
+    "lodash-es": "^4.17.21",
     "antd": "^5.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",
-    "@vitejs/plugin-react": "^2.2.0",
-    "vite": "^3.2.3",
+    "@vitejs/plugin-react": "^3.0.0",
+    "vite": "^4.0.0",
     "@babel/core": "^7.20.2",
     "typescript": "^4.9.3",
     "@types/node": "^18.11.9",
@@ -36,7 +36,7 @@
     "tsconfig": "workspace:*",
     "eslint": "^8.28.0",
     "eslint-config-custom": "workspace:*",
-    "rollup-plugin-visualizer": "~5.8.3",
+    "rollup-plugin-visualizer": "^5.8.3",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
     "tailwindcss": "^3.2.4",
