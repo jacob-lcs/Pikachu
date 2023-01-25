@@ -16,5 +16,5 @@ module.exports = {
     semi: [2, 'never'],
     'react/react-in-jsx-scope': 'off'
   },
-  ignorePatterns: ['**/dist/**']
+  ignorePatterns: ['**/dist/**', '**/node_modules/**']
 };

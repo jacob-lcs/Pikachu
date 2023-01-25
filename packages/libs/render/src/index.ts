@@ -1,5 +1,5 @@
 import { Application, utils, Ticker, Container, Text } from 'pixi.js';
-import type { IApplicationOptions, TextStyle } from 'pixi.js';
+import type { IApplicationOptions } from 'pixi.js';
 
 const ticker = Ticker.shared;
 
@@ -64,6 +64,7 @@ export class Pikachu {
     const dom = document.getElementById(this.#config.domId);
     if (!dom) return;
     dom.innerHTML = '';
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     dom.appendChild(this.#PixiInstance.view);
 

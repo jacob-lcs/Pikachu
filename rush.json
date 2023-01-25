@@ -339,10 +339,6 @@
     {
       "packageName": "eslint-config-custom",
       "projectFolder": "packages/libs/eslint-config-custom"
-    },
-    {
-      "packageName": "docs",
-      "projectFolder": "packages/apps/docs"
     }
     // {
     //   /**
