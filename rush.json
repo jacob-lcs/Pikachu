@@ -327,11 +327,11 @@
   "projects": [
     {
       "packageName": "@pikachu/render",
-      "projectFolder": "packages/libs/pixi-render"
+      "projectFolder": "packages/libs/render"
     },
     {
       "packageName": "@pikachu/editor",
-      "projectFolder": "packages/libs/pixi-editor"
+      "projectFolder": "packages/libs/editor"
     },
     {
       "packageName": "tsconfig",

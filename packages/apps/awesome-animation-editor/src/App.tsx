@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Pikachu } from '@pikachu/render'
+import { Pikachu, IElementType } from '@pikachu/render'
 
 function App() {
   const [pikachuInstance, setPikachuInstance] = useState<Pikachu>()
@@ -19,22 +19,36 @@ function App() {
       pikachuInstance.render({
         elementList: [
           {
-            type: '',
-            name: '',
+            type: IElementType.Text,
             content: '11111',
             animationList: [
               {
                 start: {
                   x: -100,
                   y: -100,
-                  properties: {}
                 },
                 end: {
                   x: 100,
                   y: 100,
-                  properties: {}
                 },
-                duration: 10000
+                duration: 1000
+              }
+            ]
+          },
+          {
+            type: IElementType.Text,
+            content: '2222',
+            animationList: [
+              {
+                start: {
+                  x: 100,
+                  y: 100,
+                },
+                end: {
+                  x: -100,
+                  y: -100,
+                },
+                duration: 500
               }
             ]
           }

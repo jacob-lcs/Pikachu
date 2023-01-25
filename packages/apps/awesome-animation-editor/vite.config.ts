@@ -8,5 +8,8 @@ const isNeedVisualizer = process.env.ANALYZE === '1'
 export default defineConfig({
   plugins: [react({
     jsxRuntime: 'classic',
-  }), isNeedVisualizer && visualizer()].filter(Boolean)
+  }), isNeedVisualizer && visualizer()].filter(Boolean),
+  build: {
+    chunkSizeWarningLimit: 5000
+  }
 })

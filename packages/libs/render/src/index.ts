@@ -1,5 +1,5 @@
 import { Application, utils, Ticker, Container, Text } from 'pixi.js'
-import type { IApplicationOptions } from 'pixi.js'
+import type { IApplicationOptions, TextStyle } from 'pixi.js'
 
 const ticker = Ticker.shared
 
@@ -7,23 +7,30 @@ export interface IConfig {
   elementList: IElement[]
 }
 
-export interface IElement {
-  type: string
-  name: string
+export interface ITextElement {
+  type: IElementType.Text
   content: string
   animationList: IAnimation[]
+}
+
+export type IElement = ITextElement
+
+export enum IElementType {
+  Text
 }
 
 export interface IAnimation {
   start: IProperty
   end: IProperty
+  /**
+   * animation duration (ms)
+   */
   duration: number
 }
 
 export interface IProperty {
   x: number
   y: number
-  properties: {}
 }
 
 export interface IPikachuOptions extends IApplicationOptions {
@@ -72,15 +79,15 @@ export class Pikachu {
       element.animationList.forEach(animation => {
         const [startX, startY] = this.#calCoordinates(animation.start.x, animation.start.y)
         const [endX, endY] = this.#calCoordinates(animation.end.x, animation.end.y)
-        const xStep = (endX - startX) / 1000
-        const yStep = (endY - startY) / 1000
+        const xStep = (endX - startX) / animation.duration
+        const yStep = (endY - startY) / animation.duration
         basicText.x = startX
         basicText.y = startY
 
         const run = () => {
           if ((endX >= startX && basicText.x >= endX) || (endX <= startX && basicText.x <= endX)) ticker.remove(run)
           if ((endY >= startY && basicText.y >= endY) || (endY <= startY && basicText.y <= endY)) ticker.remove(run)
-          container.removeChildren()
+          container.removeChild(basicText)
           basicText.x += xStep
           basicText.y += yStep
           container.addChild(basicText)
@@ -88,8 +95,6 @@ export class Pikachu {
 
         ticker.add(run)
       })
-      basicText.x = 50;
-      basicText.y = 100;
     })
 
   }
