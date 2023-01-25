@@ -13,7 +13,6 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
-    semi: [2, 'never'],
     'react/react-in-jsx-scope': 'off'
   },
   ignorePatterns: ['**/dist/**', '**/node_modules/**']
