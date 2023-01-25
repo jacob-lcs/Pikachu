@@ -1,5 +1,5 @@
-import { resolve } from 'path'
-import { defineConfig } from 'vite'
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [],
@@ -20,4 +20,4 @@ export default defineConfig({
       }
     }
   }
-})
+});

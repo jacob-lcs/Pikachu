@@ -1,7 +1,9 @@
 {
   "name": "@pikachu/render",
   "version": "0.0.1",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/pixi-render.js",
   "module": "./dist/pixi-render.mjs",
   "typings": "typings",

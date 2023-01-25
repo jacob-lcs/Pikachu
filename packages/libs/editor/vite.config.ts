@@ -1,14 +1,17 @@
-import { resolve } from 'path'
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { visualizer } from "rollup-plugin-visualizer"
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { visualizer } from 'rollup-plugin-visualizer';
 
-const isNeedVisualizer = process.env.ANALYZE === '1'
+const isNeedVisualizer = process.env.ANALYZE === '1';
 
 export default defineConfig({
-  plugins: [react({
-    jsxRuntime: 'classic',
-  }), isNeedVisualizer && visualizer()].filter(Boolean),
+  plugins: [
+    react({
+      jsxRuntime: 'classic'
+    }),
+    isNeedVisualizer && visualizer()
+  ].filter(Boolean),
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points
@@ -20,7 +23,7 @@ export default defineConfig({
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
-      external: ['react', 'antd', 'zustand', 'lodash-es'],
+      external: ['react', 'antd', 'zustand', 'lodash-es']
     }
   }
-})
+});

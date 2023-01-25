@@ -1,7 +1,4 @@
 module.exports = {
-    "extends": [
-        "custom"
-    ],
-    "rules": {
-    }
-}
+  extends: ['custom'],
+  rules: {}
+};

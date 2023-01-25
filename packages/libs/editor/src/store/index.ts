@@ -1,1 +1,1 @@
-export * from './settingsPanel'
+export * from './settingsPanel';

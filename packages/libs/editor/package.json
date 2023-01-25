@@ -1,7 +1,9 @@
 {
   "name": "@pikachu/editor",
   "version": "0.0.1",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/pixi-editor.js",
   "module": "./dist/pixi-editor.mjs",
   "typings": "./dist/index.d.ts",

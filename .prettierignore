@@ -80,3 +80,5 @@ typings
 .docusaurus
 .cache-loader
 build
+
+pnpm-lock.yaml

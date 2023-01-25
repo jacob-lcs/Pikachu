@@ -1,49 +1,48 @@
-import { Application, utils, Ticker, Container, Text } from 'pixi.js'
-import type { IApplicationOptions, TextStyle } from 'pixi.js'
+import { Application, utils, Ticker, Container, Text } from 'pixi.js';
+import type { IApplicationOptions, TextStyle } from 'pixi.js';
 
-const ticker = Ticker.shared
+const ticker = Ticker.shared;
 
 export interface IConfig {
-  elementList: IElement[]
+  elementList: IElement[];
 }
 
 export interface ITextElement {
-  type: IElementType.Text
-  content: string
-  animationList: IAnimation[]
+  type: IElementType.Text;
+  content: string;
+  animationList: IAnimation[];
 }
 
-export type IElement = ITextElement
+export type IElement = ITextElement;
 
 export enum IElementType {
   Text
 }
 
 export interface IAnimation {
-  start: IProperty
-  end: IProperty
+  start: IProperty;
+  end: IProperty;
   /**
    * animation duration (ms)
    */
-  duration: number
+  duration: number;
 }
 
 export interface IProperty {
-  x: number
-  y: number
+  x: number;
+  y: number;
 }
 
 export interface IPikachuOptions extends IApplicationOptions {
   /**
    * 展示动画的 DOM ID
    */
-  domId: string
+  domId: string;
 }
 
-
 export class Pikachu {
-  #PixiInstance: Application | undefined
-  #config: IPikachuOptions | undefined
+  #PixiInstance: Application | undefined;
+  #config: IPikachuOptions | undefined;
   constructor(config: IPikachuOptions) {
     this.#PixiInstance = new Application({
       antialias: true,
@@ -51,51 +50,49 @@ export class Pikachu {
       autoDensity: true,
       forceCanvas: !utils.isWebGLSupported(),
       ...config
-    })
-    this.#config = config
+    });
+    this.#config = config;
   }
 
   #calCoordinates(x: number, y: number) {
-    const { width=800, height=600 } = this.#config || {}
-    return [
-      width / 2 + x,
-      height / 2 + y
-    ]
+    const { width = 800, height = 600 } = this.#config || {};
+    return [width / 2 + x, height / 2 + y];
   }
 
   render(config: IConfig) {
-    if (!this.#config || !this.#PixiInstance) return
-    const dom = document.getElementById(this.#config.domId)
-    if (!dom) return
-    dom.innerHTML = ""
+    if (!this.#config || !this.#PixiInstance) return;
+    const dom = document.getElementById(this.#config.domId);
+    if (!dom) return;
+    dom.innerHTML = '';
     // @ts-ignore
-    dom.appendChild(this.#PixiInstance.view)
+    dom.appendChild(this.#PixiInstance.view);
 
-    const container = new Container()
-    this.#PixiInstance.stage.addChild(container)
+    const container = new Container();
+    this.#PixiInstance.stage.addChild(container);
 
-    config.elementList.forEach(element => {
+    config.elementList.forEach((element) => {
       const basicText = new Text(element.content);
-      element.animationList.forEach(animation => {
-        const [startX, startY] = this.#calCoordinates(animation.start.x, animation.start.y)
-        const [endX, endY] = this.#calCoordinates(animation.end.x, animation.end.y)
-        const xStep = (endX - startX) / animation.duration
-        const yStep = (endY - startY) / animation.duration
-        basicText.x = startX
-        basicText.y = startY
+      element.animationList.forEach((animation) => {
+        const [startX, startY] = this.#calCoordinates(animation.start.x, animation.start.y);
+        const [endX, endY] = this.#calCoordinates(animation.end.x, animation.end.y);
+        const xStep = (endX - startX) / animation.duration;
+        const yStep = (endY - startY) / animation.duration;
+        basicText.x = startX;
+        basicText.y = startY;
 
         const run = () => {
-          if ((endX >= startX && basicText.x >= endX) || (endX <= startX && basicText.x <= endX)) ticker.remove(run)
-          if ((endY >= startY && basicText.y >= endY) || (endY <= startY && basicText.y <= endY)) ticker.remove(run)
-          container.removeChild(basicText)
-          basicText.x += xStep
-          basicText.y += yStep
-          container.addChild(basicText)
-        }
+          if ((endX >= startX && basicText.x >= endX) || (endX <= startX && basicText.x <= endX))
+            ticker.remove(run);
+          if ((endY >= startY && basicText.y >= endY) || (endY <= startY && basicText.y <= endY))
+            ticker.remove(run);
+          container.removeChild(basicText);
+          basicText.x += xStep;
+          basicText.y += yStep;
+          container.addChild(basicText);
+        };
 
-        ticker.add(run)
-      })
-    })
-
+        ticker.add(run);
+      });
+    });
   }
 }
