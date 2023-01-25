@@ -1,0 +1,4 @@
+# docusaurus Generated files
+.docusaurus
+.cache-loader
+build
