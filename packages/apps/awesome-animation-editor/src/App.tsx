@@ -23,17 +23,24 @@ function App() {
           {
             type: IElementType.Text,
             content: '11111',
+            property: {
+              fill: '#e0197f',
+              fontSize: '30px'
+            },
             animationList: [
               {
                 start: {
                   x: -100,
-                  y: -100
+                  y: -100,
+                  time: 5 * 1000,
+                  zoom: 1
                 },
                 end: {
                   x: 100,
-                  y: 100
-                },
-                duration: 1000
+                  y: 100,
+                  time: 10 * 1000,
+                  zoom: 2
+                }
               }
             ]
           },
@@ -44,13 +51,14 @@ function App() {
               {
                 start: {
                   x: 100,
-                  y: 100
+                  y: 100,
+                  time: 10 * 1000
                 },
                 end: {
                   x: -100,
-                  y: -100
-                },
-                duration: 500
+                  y: -100,
+                  time: 20 * 1000
+                }
               }
             ]
           }
