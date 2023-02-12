@@ -16,7 +16,7 @@
    * path segment in the "$schema" field for all your Rush config files.  This will ensure
    * correct error-underlining and tab-completion for editors such as VS Code.
    */
-  "rushVersion": "5.90.0",
+  "rushVersion": "5.92.0",
 
   /**
    * The next field selects which package manager should be installed and determines its version.
@@ -26,7 +26,7 @@
    * Specify one of: "pnpmVersion", "npmVersion", or "yarnVersion".  See the Rush documentation
    * for details about these alternatives.
    */
-  "pnpmVersion": "7.26.3",
+  "pnpmVersion": "7.27.0",
   "pnpmOptions": {
     "useWorkspaces": true
   },
@@ -340,102 +340,5 @@
       "packageName": "eslint-config-custom",
       "projectFolder": "packages/libs/eslint-config-custom"
     }
-    // {
-    //   /**
-    //    * The NPM package name of the project (must match package.json)
-    //    */
-    //   "packageName": "my-app",
-    //
-    //   /**
-    //    * The path to the project folder, relative to the rush.json config file.
-    //    */
-    //   "projectFolder": "apps/my-app",
-    //
-    //   /**
-    //    * An optional category for usage in the "browser-approved-packages.json"
-    //    * and "nonbrowser-approved-packages.json" files.  The value must be one of the
-    //    * strings from the "reviewCategories" defined above.
-    //    */
-    //   "reviewCategory": "production",
-    //
-    //   /**
-    //    * A list of Rush project names that are to be installed from NPM
-    //    * instead of linking to the local project.
-    //    *
-    //    * If a project's package.json specifies a dependency that is another Rush project
-    //    * in the monorepo workspace, normally Rush will locally link its folder instead of
-    //    * installing from NPM.  If you are using PNPM workspaces, this is indicated by
-    //    * a SemVer range such as "workspace:^1.2.3".  To prevent mistakes, Rush reports
-    //    * an error if the "workspace:" protocol is missing.
-    //    *
-    //    * Locally linking ensures that regressions are caught as early as possible and is
-    //    * a key benefit of monorepos.  However there are occasional situations where
-    //    * installing from NPM is needed.  A classic example is a cyclic dependency.
-    //    * Imagine three Rush projects: "my-toolchain" depends on "my-tester", which depends
-    //    * on "my-library".  Suppose that we add "my-toolchain" to the "devDependencies"
-    //    * of "my-library" so it can be built by our toolchain.  This cycle creates
-    //    * a problem -- Rush can't build a project using a not-yet-built dependency.
-    //    * We can solve it by adding "my-toolchain" to the "decoupledLocalDependencies"
-    //    * of "my-library", so it builds using the last published release.  Choose carefully
-    //    * which package to decouple; some choices are much easier to manage than others.
-    //    *
-    //    * (In older Rush releases, this setting was called "cyclicDependencyProjects".)
-    //    */
-    //   "decoupledLocalDependencies": [
-    //     // "my-toolchain"
-    //   ],
-    //
-    //   /**
-    //    * If true, then this project will be ignored by the "rush check" command.
-    //    * The default value is false.
-    //    */
-    //   // "skipRushCheck": false,
-    //
-    //   /**
-    //    * A flag indicating that changes to this project will be published to npm, which affects
-    //    * the Rush change and publish workflows. The default value is false.
-    //    * NOTE: "versionPolicyName" and "shouldPublish" are alternatives; you cannot specify them both.
-    //    */
-    //   // "shouldPublish": false,
-    //
-    //   /**
-    //    * Facilitates postprocessing of a project's files prior to publishing.
-    //    *
-    //    * If specified, the "publishFolder" is the relative path to a subfolder of the project folder.
-    //    * The "rush publish" command will publish the subfolder instead of the project folder.  The subfolder
-    //    * must contain its own package.json file, which is typically a build output.
-    //    */
-    //   // "publishFolder": "temp/publish",
-    //
-    //   /**
-    //    * An optional version policy associated with the project.  Version policies are defined
-    //    * in "version-policies.json" file.  See the "rush publish" documentation for more info.
-    //    * NOTE: "versionPolicyName" and "shouldPublish" are alternatives; you cannot specify them both.
-    //    */
-    //   // "versionPolicyName": "",
-    //
-    //   /**
-    //    * An optional set of custom tags that can be used to select this project.  For example,
-    //    * adding "my-custom-tag" will allow this project to be selected by the
-    //    * command "rush list --only tag:my-custom-tag".  The tag name must be one or more words
-    //    * separated by hyphens or slashes, where a word may contain lowercase ASCII letters, digits,
-    //    * ".", and "@" characters.
-    //    */
-    //   // "tags": [ "1.0.0-release", "frontend-team" ]
-    // },
-    //
-    // {
-    //   "packageName": "my-controls",
-    //   "projectFolder": "libraries/my-controls",
-    //   "reviewCategory": "production",
-    //   "tags": [ "frontend-team" ]
-    // },
-    //
-    // {
-    //   "packageName": "my-toolchain",
-    //   "projectFolder": "tools/my-toolchain",
-    //   "reviewCategory": "tools",
-    //   "tags": [ "tools" ]
-    // }
   ]
 }

@@ -1,5 +1,6 @@
 import { Application, utils, Ticker, Container, Text } from 'pixi.js';
 import type { IApplicationOptions, TextStyle } from 'pixi.js';
+import { isNil } from 'lodash-es';
 
 const ticker = Ticker.shared;
 ticker.autoStart = false;
@@ -42,9 +43,9 @@ export interface ITextAnimationProperty extends ICommonAnimationProperty {
 
 export interface ICommonAnimationProperty {
   /** x 坐标，以屏幕中心为原点 */
-  x: number;
+  x?: number;
   /** y 坐标，以屏幕中心为原点 */
-  y: number;
+  y?: number;
   /** 缩放比例 */
   zoom?: number;
   /** 动画开始/结束时间，单位：ms */
@@ -85,9 +86,7 @@ export class Pikachu {
     if (!dom) return;
     ticker.start();
     dom.innerHTML = '';
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    dom.appendChild(this.PixiInstance.view);
+    dom.appendChild(this.PixiInstance.view as unknown as Node);
 
     const container = new Container();
     this.PixiInstance.stage.addChild(container);
@@ -95,33 +94,51 @@ export class Pikachu {
     config.elementList.forEach((element) => {
       const basicText = new Text(element.content, element.property);
       element.animationList.forEach((animation) => {
-        const [startX, startY] = this.calCoordinates(animation.start.x, animation.start.y);
-        const [endX, endY] = this.calCoordinates(animation.end.x, animation.end.y);
+        const [startX, startY] = this.calCoordinates(animation.start?.x ?? 0, animation.start?.y ?? 0);
+        const [endX, endY] = this.calCoordinates(animation.end?.x ?? 0, animation.end?.y ?? 0);
         const duration = animation.end.time - animation.start.time;
-        basicText.x = startX;
-        basicText.y = startY;
-        basicText.scale = {
-          x: animation.start.zoom ?? 1,
-          y: animation.end.zoom ?? 1
-        };
+
+        if (
+          !isNil(animation.start?.x) &&
+          !isNil(animation.start?.y) &&
+          !isNil(animation.end?.x) &&
+          !isNil(animation.end?.y)
+        ) {
+          basicText.x = startX;
+          basicText.y = startY;
+        }
+        if (!isNil(animation.start.zoom) && !isNil(animation.end.zoom)) {
+          basicText.scale = {
+            x: animation.start.zoom ?? 1,
+            y: animation.end.zoom ?? 1
+          };
+        }
 
         const run = () => {
-          const xStep = ((endX - startX) / duration) * ticker.elapsedMS;
-          const yStep = ((endY - startY) / duration) * ticker.elapsedMS;
-          const zoomStep =
-            ((animation.end.zoom ?? 1 - (animation.start.zoom ?? 1)) / duration) * ticker.elapsedMS;
+          // 如果当前时间超出了动画的时间范围，则退出
           if (
             ticker.lastTime &&
             (ticker.lastTime < animation.start.time || ticker.lastTime > animation.end.time)
           )
             return;
           container.removeChild(basicText);
-          basicText.x += xStep;
-          basicText.y += yStep;
-          basicText.scale = {
-            x: basicText.scale.x + zoomStep,
-            y: basicText.scale.y + zoomStep
-          };
+
+          if (!isNil(animation.start?.x)) {
+            const xStep = ((endX - startX) / duration) * ticker.elapsedMS;
+            basicText.x += xStep;
+          }
+          if (!isNil(animation.start?.y)) {
+            const yStep = ((endY - startY) / duration) * ticker.elapsedMS;
+            basicText.y += yStep;
+          }
+          if (!isNil(animation.end.zoom)) {
+            const zoomStep =
+              ((animation.end.zoom ?? 1 - (animation.start.zoom ?? 1)) / duration) * ticker.elapsedMS;
+            basicText.scale = {
+              x: basicText.scale.x + zoomStep,
+              y: basicText.scale.y + zoomStep
+            };
+          }
           container.addChild(basicText);
         };
 

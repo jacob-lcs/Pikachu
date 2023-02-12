@@ -1,6 +1,6 @@
 // 配置可参考 https://prettier.io/en/configuration.html
 module.exports = {
-  // 使用较大的打印宽度，因为 Prettier 的换行设置似乎是针对没有注释的 JavaScript.
+  // 使用较大的打印宽度
   printWidth: 110,
 
   // 使用 .gitattributes 来管理换行

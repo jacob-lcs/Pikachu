@@ -41,6 +41,16 @@ function App() {
                   time: 10 * 1000,
                   zoom: 2
                 }
+              },
+              {
+                start: {
+                  time: 5 * 1000,
+                  zoom: 1
+                },
+                end: {
+                  time: 10 * 1000,
+                  zoom: 2
+                }
               }
             ]
           },
