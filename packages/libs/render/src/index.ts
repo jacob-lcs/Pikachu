@@ -66,7 +66,7 @@ export class Pikachu {
   private readonly config: IPikachuOptions | undefined;
   constructor(config: IPikachuOptions) {
     this.PixiInstance = new Application({
-      antialias: true,
+      // antialias: true,
       resolution: 2,
       autoDensity: true,
       forceCanvas: !utils.isWebGLSupported(),
